@@ -57,6 +57,7 @@
 ```yaml
 - timestamp    # из server.csv
 - player_id    # из client.csv
+- event_id     # из server.csv
 - error_id     # из сджойненных server.csv и client.csv
 - json_server  # поле json из server.csv
 - json_client  # поле json из client.csv
