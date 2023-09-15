@@ -68,6 +68,12 @@
 Замерить потребление памяти во время выполнения задачи
 
 <br>
+
+### Результат:
+![plot](img/memory_usage_plot.png)
+![tty](img/memory_usage_tty.png)
+
+<br>
 <br>
 
 ## P. S.
