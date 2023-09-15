@@ -103,6 +103,20 @@ class SQLExtractor(DataExtractor):
         ...
 
     @property
+    @abstractmethod
+    def chunksize(self) -> int:
+        ...
+
+
+class SQLiteExtractor(SQLExtractor):
+    @property
+    def engine(self) -> Engine:
+        return create_engine(
+            url=f"sqlite:///{self.path}",
+            echo=False
+        )
+
+    @property
     def chunksize(self) -> int:
         with self.engine.connect() as connection:
             row_count: int = connection.scalar(
@@ -119,15 +133,6 @@ class SQLExtractor(DataExtractor):
         return int(
             (psutil.virtual_memory().free * 0.75) /
             (data_size / row_count)
-        )
-
-
-class SQLiteExtractor(SQLExtractor):
-    @property
-    def engine(self) -> Engine:
-        return create_engine(
-            url=f"sqlite:///{self.path}",
-            echo=False
         )
 
     def get_chunks(self,
