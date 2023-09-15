@@ -1,3 +1,13 @@
+# Memory-profile
+*.dat
+
+# Data
+database/*
+dataset/*
+
+# Poetry
+*.lock
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
