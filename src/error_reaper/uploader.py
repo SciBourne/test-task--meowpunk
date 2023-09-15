@@ -20,10 +20,7 @@ class UpLoader:
 
         self.__refresh_result_table()
 
-    def send_data(self,
-                  table_name: str,
-                  data_frame: pd.DataFrame) -> None:
-
+    def send_data(self, data_frame: pd.DataFrame) -> None:
         data_frame.to_sql(
             con=self.engine,
             name=Error.__tablename__,
