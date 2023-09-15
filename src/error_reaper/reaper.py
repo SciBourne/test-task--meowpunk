@@ -103,7 +103,6 @@ class ErrorReaper:
 
         with tqdm(desc="PROGRESS", colour="green", ncols=80) as fake_progress:
             self.UPLOADER.send_data(
-                table_name="errors",
                 data_frame=self.relevant_errors
             )
 
